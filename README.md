@@ -1,5 +1,6 @@
 # Step1 啟動 cockroach db: 
 開啟終端機：
+
 啟動指令：cockroach start-single-node \
   --insecure \
   --store=localdb \
@@ -15,17 +16,24 @@
 Package                Version
 ---------------------- -------
 pip                    22.3.1
+
 psycopg2-binary        2.9.10
+
 setuptools             65.5.0
+
 SQLAlchemy             2.0.41
+
 sqlalchemy-cockroachdb 2.0.2
+
 typing_extensions      4.13.2
 
 # Step3 填入 input
 看到 ##################### 請修改你需要的input ###################### 時，請根據功能修改你要的參數
+
 範例：如果要建立users這個table，需要修改功能
 
 func = "create table"
+
 sub_func = create user
 
 並取消user的相關輸入的註解，賦值給參數
@@ -44,7 +52,9 @@ python3 main.py or python3 modify.py
 
 # Step5 查看寫入資料
 另開一個終端機，輸入：cockroach sql --insecure，開始可以寫sql
+
 輸入：USE mydb
+
 終端機呈現 root@localhost:26257/mydb>時，接下來就可以輸入相關sql去查詢是否正確寫入：SELECT * FROM users;
 
 # 文件說明：
